@@ -51,7 +51,8 @@ requirements:
   build:
     - automake
     - libtool
-    - make
+    - make'pinned lower version for libnetcdf'
+
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - openssh  # [mpi == 'openmpi']
@@ -67,7 +68,7 @@ requirements:
     - libblas
     - liblapack
     - libnetcdf  # [tempest == 'tempest']
-    - libnetcdf * {{ mpi_prefix }}_*  # [tempest == 'tempest']
+    - libnetcdf >=4.7.4 * {{ mpi_prefix }}_*  # [tempest == 'tempest']
     - metis
     - {{ mpi }}  # [mpi != 'nompi']
     - numpy
@@ -81,7 +82,7 @@ requirements:
     - hdf5 * {{ mpi_prefix }}_*
     - libblas
     - liblapack
-    - libnetcdf * {{ mpi_prefix }}_*  # [tempest == 'tempest']
+    - libnetcdf >=4.7.4 * {{ mpi_prefix }}_*  # [tempest == 'tempest']
     - metis
     - {{ mpi }}  # [mpi != 'nompi']
     - numpy
